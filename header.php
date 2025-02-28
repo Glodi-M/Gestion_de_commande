@@ -2,7 +2,6 @@
 <html lang="en" class="h-100" data-bs-theme="auto">
 
 <head>
-
     <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
@@ -10,16 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Gestion commande </title>
+    <title>Gestion commande</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sticky-footer-navbar/">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
 
-    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Charger jQuery avant DataTables -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
 
     <!-- Custom styles for this template -->
-
     <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -95,7 +102,7 @@
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Application Commandes</a>
+                <a class="navbar-brand" href="index.php">Application Commandes</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -104,7 +111,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/index.php") : ?> active <?php endif ?> " aria-current="page" href="index.php">Acceuil</a>
+                            <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/index.php") : ?> active <?php endif ?> " aria-current="page" href="index.php">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/articles.php") : ?> active <?php endif ?>" href="articles.php">Articles</a>

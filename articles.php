@@ -8,6 +8,21 @@ $title = "Articles";
 <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">Articles</h1>
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 </main>
 
