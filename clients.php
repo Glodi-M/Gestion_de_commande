@@ -6,7 +6,7 @@ include_once 'header.php';
 <!-- Begin page content -->
 <main class="flex-shrink-0">
     <div class="container">
-        <h1 class="mt-5">Commandes</h1>
+        <h1 class="mt-5">Clients</h1>
     </div>
 </main>
 
