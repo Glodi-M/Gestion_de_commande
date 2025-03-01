@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville = trim($_POST['ville'] ?? '');
     $telephone = trim($_POST['telephone'] ?? '');
 
-    // Tableau pour stocker les erreurs
+
     $errors = [];
 
 
@@ -24,8 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($telephone) || !preg_match('/^[0-9]{10}$/', $telephone)) {
         $errors[] = "Le champ 'Téléphone' est obligatoire et doit contenir 10 chiffres.";
     }
-
-    // Si aucune erreur, procéder à l'insertion
 
     if (empty($errors)) {
         try {
