@@ -1,6 +1,6 @@
 <?php
 include_once 'header.php';
-$title = "Articles";
+include_once 'main.php';
 ?>
 
 
