@@ -1,5 +1,6 @@
 <?php
 include_once 'header.php';
+include_once 'connexion.php';
 ?>
 
 
@@ -7,6 +8,8 @@ include_once 'header.php';
 <main class="flex-shrink-0">
     <div class="container">
         <h1 class="mt-5">Accueil</h1>
+
+        <?php $pdo = new Connect(); ?>
 
         <table id="myTable" class="display">
             <thead>

@@ -20,11 +20,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-    </script>
 
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
@@ -127,7 +122,3 @@
                     </div>
         </nav>
     </header>
-
-</body>
-
-</html>
