@@ -12,6 +12,12 @@ main>.container {
     user-select: none;
 }
 
+
+#myTable td, #myTable th {
+    text-align: center;
+    vertical-align: middle;
+}
+
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;

@@ -7,13 +7,15 @@
 <script>
     $(document).ready(function() {
         $('#myTable').DataTable({
-            "oLanguage": {
-                "sLengthMenu": "Afficher MENU Enregistrements",
-                "sSearch": "Rechercher: ",
-                "sInfo": "Total de TOTAL enregistrements (_END_ / _TOTAL_)",
-                "oPaginate": {
-                    "sNext": "Suivant",
-                    "sPrevious": "Précédent"
+            "lengthMenu": [10, 25, 50, 100],
+            "pageLength": 10,
+            "language": {
+                "lengthMenu": "Afficher _MENU_ enregistrements",
+                "search": "Rechercher :",
+                "info": "Affichage de _START_ à _END_ sur _TOTAL_ enregistrements",
+                "paginate": {
+                    "next": "Suivant",
+                    "previous": "Précédent"
                 }
             }
         });
