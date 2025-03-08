@@ -54,9 +54,10 @@ ob_end_flush();
 <form class="row g-3" method="POST">
 
     <div class="col-md-6">
-        <label for="inputDescription" class="form-label">Description</label>
-        <input type="text" class="form-control" id="inputDescription" name="description" placeholder="Description de l'article" required>
+        <label for="floatingTextarea" class="mb-2">Description</label>
+        <textarea class="form-control" name="description" placeholder="Description de l'article" id="floatingTextarea" required></textarea>
     </div>
+
     <div class="col-md-6">
         <label for="inputPrix" class="form-label">Prix Unitaire</label>
         <input type="text" class="form-control" id="inputPrix" name="prix" placeholder="Prix unitaire de l'article" required>
