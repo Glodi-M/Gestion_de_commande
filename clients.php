@@ -2,6 +2,17 @@
 include_once 'header.php';
 include 'main.php';
 $count = 0;
+$liste = [];
+$query = "SELECT idclient FROM client WHERE idclient IN (SELECT idclient FROM commande)";
+$pdostmt = $pdo->prepare($query);
+$pdostmt->execute();
+
+foreach ($pdostmt->fetchAll(PDO::FETCH_NUM) as $tabvalues) {
+
+    foreach ($tabvalues as $value) {
+        $liste[] = $value;
+    }
+}
 ?>
 
 
@@ -52,7 +63,9 @@ $pdostmt->execute();
                         </svg>
                     </a>
 
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal<?php echo $count ?>" class="btn btn-danger">
+                    <button type="button" data-bs-toggle="modal" <?php if (in_array($row['idclient'], $liste)) {
+                                                                        echo "disabled";
+                                                                    } ?> data-bs-target="#deleteModal<?php echo $count ?>" class="btn btn-danger">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                             <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0" />
                         </svg>
