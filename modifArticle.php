@@ -14,7 +14,7 @@ $idarticle = $_GET['id'];
 $query = "SELECT * FROM article WHERE idarticle = :idarticle";
 $pdostmt = $pdo->prepare($query);
 $pdostmt->execute(['idarticle' => $idarticle]);
-$article = $pdostmt->fetch(PDO::FETCH_ASSOC); // Renommez la variable pour plus de clarté
+$article = $pdostmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$article) {
     die("Article non trouvé.");
@@ -66,8 +66,9 @@ ob_end_flush();
 <h1 class="mt-5 ml-5">Modifier un article</h1>
 <form class="row g-3" method="POST">
     <div class="col-md-6">
-        <label for="inputDescription" class="form-label">Description</label>
-        <input type="text" class="form-control" id="inputDescription" name="description" value="<?= htmlspecialchars($article['description']) ?>">
+        <input type="hidden" name="idarticle" value="<?= $article['idarticle'] ?>">
+        <label for="floatingTextarea" class="mb-2">Description</label>
+        <textarea class="form-control" id="floatingTextarea" name="description"><?= htmlspecialchars($article['description']) ?></textarea>
     </div>
     <div class="col-md-6">
         <label for="inputPrix" class="form-label">Prix Unitaire</label>
