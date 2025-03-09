@@ -14,15 +14,18 @@ $pdostmt2->execute();
 
 // Ajouter une commande
 
-if (!empty($_POST["idClient"]) &&  !empty($_POST["date"])) {
-    $idClient = $_POST["idClient"];
-    $date = $_POST["date"];
-    $query = "INSERT INTO commande (idclient, date) VALUES (:idClient, :date)";
+if (!empty($_POST["qte"]) &&  !empty($_POST["date"])) {
+
+    $query = "INSERT INTO commande (idclient,date) VALUES (:idClient, :date)";
     $pdostmt = $pdo->prepare($query);
-    $pdostmt->execute([
-        ':idClient' => $idClient,
-        ':date' => $date
-    ]);
+    $pdostmt->execute(["idClient" => $_POST["idClient"], "date" => $_POST["date"]]);
+    $idcmd = $pdo->lastInsertId();
+
+    $query2 = "INSERT INTO ligne_de_commande (commande_id,article_id,quantite) VALUES (:idcmd, :idArticle, :qte)";
+    $pdostmt2 = $pdo->prepare($query2);
+    $pdostmt2->execute(["idcmd" => $idcmd, "idArticle" => $_POST["idArticle"], "qte" => $_POST["qte"]]);
+
+
     header("Location: commandes.php");
     exit;
 }
