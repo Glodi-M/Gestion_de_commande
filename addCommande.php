@@ -7,6 +7,10 @@ $pdostmt = $pdo->prepare($query);
 $pdostmt->execute();
 
 
+$query2 = "SELECT idarticle FROM article";
+$pdostmt2 = $pdo->prepare($query2);
+$pdostmt2->execute();
+
 
 // Ajouter une commande
 
@@ -48,6 +52,24 @@ if (!empty($_POST["idClient"]) &&  !empty($_POST["date"])) {
     <div class="col-md-6">
         <label for="inputDate" class="form-label">DATE</label>
         <input type="date" class="form-control" id="inputDate" name="date" required>
+    </div>
+    <div class="col-md-6">
+        <label for="inputIdartcile" class="form-label">ARTICLE</label>
+        <select class="form-control" name="idArticle" id="inputIderticle" required>
+            <?php
+
+            foreach ($pdostmt2->fetchAll(PDO::FETCH_NUM) as $tabvalues) {
+
+                foreach ($tabvalues as $value) {
+                    echo "<option value='$value'>$value</option>";
+                }
+            }
+            ?>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="inputQte" class="form-label">QUANTITE</label>
+        <input type="texte" class="form-control" id="inputQte" name="qte" required>
     </div>
 
     <div class="col-12">
