@@ -7,7 +7,7 @@ $pdostmt = $pdo->prepare($query);
 $pdostmt->execute();
 
 
-$query2 = "SELECT idarticle FROM article";
+$query2 = "SELECT description FROM article";
 $pdostmt2 = $pdo->prepare($query2);
 $pdostmt2->execute();
 
