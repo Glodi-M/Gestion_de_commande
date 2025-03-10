@@ -94,31 +94,54 @@
 
 
     <header>
-        <!-- Fixed navbar -->
+
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">Application Commandes</a>
+
+                <a class="navbar-brand" href="index.php">Gestion Commande</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/index.php") : ?> active <?php endif ?> " aria-current="page" href="index.php">Accueil</a>
+                            <a class="nav-link <?= ($_SERVER['SCRIPT_NAME'] === '/index.php') ? 'active' : ''; ?>" href="index.php">Accueil</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/articles.php") : ?> active <?php endif ?>" href="articles.php">Articles</a>
+                            <a class="nav-link <?= ($_SERVER['SCRIPT_NAME'] === '/articles.php') ? 'active' : ''; ?>" href="articles.php">Articles</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/clients.php") : ?> active <?php endif ?> " href="clients.php">Clients</a>
+                            <a class="nav-link <?= ($_SERVER['SCRIPT_NAME'] === '/clients.php') ? 'active' : ''; ?>" href="clients.php">Clients</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link <?php if ($_SERVER['SCRIPT_NAME'] === "/commandes.php") : ?> active<?php endif ?> " href="commandes.php">Commandes</a>
+                            <a class="nav-link <?= ($_SERVER['SCRIPT_NAME'] === '/commandes.php') ? 'active' : ''; ?>" href="commandes.php">Commandes</a>
                         </li>
                     </ul>
-                </div
-                    </div>
+
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i> Utilisateur
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="profile.php">Profil</a></li>
+                                <li><a class="dropdown-item" href="settings.php">Paramètres</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="logout.php">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
